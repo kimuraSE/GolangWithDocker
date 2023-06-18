@@ -50,7 +50,7 @@ func (uh *userHandler) Login(c echo.Context) error {
 	cookie.Domain = os.Getenv("API_DOMAIN")
 	cookie.Path = "/"
 	cookie.SameSite = http.SameSiteNoneMode
-	cookie.Secure = true
+	// cookie.Secure = true
 	c.SetCookie(cookie)
 	return c.NoContent(http.StatusOK)
 }
@@ -76,7 +76,7 @@ func (uh *userHandler) SignUp(c echo.Context) error {
 	cookie.Domain = os.Getenv("API_DOMAIN")
 	cookie.Path = "/"
 	cookie.SameSite = http.SameSiteNoneMode
-	cookie.Secure = true
+	// cookie.Secure = true
 	c.SetCookie(cookie)
 	return c.NoContent(http.StatusOK)
 }
@@ -119,7 +119,7 @@ func (uh *userHandler) DeleteUser(c echo.Context) error {
 	cookie.HttpOnly=true
 	cookie.Domain=os.Getenv("API_DOMAIN")
 	cookie.SameSite=http.SameSiteNoneMode
-	cookie.Secure=true
+	// cookie.Secure=true
 	cookie.Path="/"
 	c.SetCookie(cookie)
 
