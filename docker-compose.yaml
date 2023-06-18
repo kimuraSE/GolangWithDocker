@@ -11,4 +11,15 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: linkcabinet_db
     restart: always
+
+  dev-server:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+      target: dev
+    ports:
+      - 8080:8080
+    depends_on:
+      - dev-postgres
+    restart: always
    
